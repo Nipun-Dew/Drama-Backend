@@ -1,0 +1,23 @@
+{
+  "name": "drama-app-backend",
+  "version": "1.0.0",
+  "description": "This is the backend application for Drama Review app. Used technologies are node js and express js mainly.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nipun-Dew/Drama-App-Backend.git"
+  },
+  "author": "Nipun_Dew",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Nipun-Dew/Drama-App-Backend/issues"
+  },
+  "homepage": "https://github.com/Nipun-Dew/Drama-App-Backend#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.13.3"
+  }
+}
