@@ -17,10 +17,7 @@ const DramaSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    cast: {
-        type: Buffer,
-        required: true
-    },
+    cast: [String],
     Director: {
         type: String,
         required: true
@@ -33,8 +30,9 @@ const DramaSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    Comments: {
-        type: Buffer,
-        required: true
-    }
-})
+    Comments: [String]
+});
+
+const Drama = mongoose.model('Drama', DramaSchema);
+
+module.exports = Drama;
