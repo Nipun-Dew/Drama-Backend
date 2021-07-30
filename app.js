@@ -1,13 +1,12 @@
 const express = require('express');
 const app = express();
 
-const Drama = require('./models/Drama');
-
 const dotenv = require('dotenv');
 dotenv.config();
 
 const mongoose = require('mongoose');
 
+// database connection
 mongoose.connect(process.env.DB_CONNECT, { useNewUrlParser: true, useUnifiedTopology: true }, () => {
     console.log("Database is connected!");
 });
@@ -22,7 +21,7 @@ app.get('/', (req, res) => {
 
 // add routes
 app.use('/drama', require('./routes/dramaRoutes'));
-//app.use('/user', require('./routes/userRoutes'));
+app.use('/user', require('./routes/userRoutes'));
 
 app.listen(3000, () => {
     console.log("Listen from port number 3000");

@@ -3,7 +3,7 @@ const router = express.Router();
 
 const Drama = require('../models/Drama');
 
-
+// get all drama objects
 router.get('/get/dramas', async(req, res) => {
     try {
         const data = await Drama.find({}).exec();
@@ -15,6 +15,7 @@ router.get('/get/dramas', async(req, res) => {
     }
 });
 
+// get all comments for the given drama _id
 router.get('/get/comments', async(req, res) => {
     try {
         const data = await Drama.find({ _id: req.body._id }).exec();
@@ -27,6 +28,8 @@ router.get('/get/comments', async(req, res) => {
     }
 });
 
+// add drama for db
+// only admins can access this end point
 router.post('/add/drama', async(req, res) => {
     const drama = new Drama({
         category: req.body.category,
